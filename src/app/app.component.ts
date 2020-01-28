@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bick-dejta-app';
+  title = 'Bick Dejta - internetowy sklep z dużą ilością dejta';
 }
