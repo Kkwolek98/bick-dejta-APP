@@ -20,6 +20,8 @@ Services are located inside `services` folder. To generate new component use `ng
 
 [Angular Docs](https://angular.io/docs)
 
+[Trello Tasks](https://trello.com/b/z7iMum9w/bick-dejta-app)
+
 ## Adding Material Module
 
 If module of a Material Component is not added, add it to `material.module.ts` inside `shared` directory.
