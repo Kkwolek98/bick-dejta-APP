@@ -1,2 +1,32 @@
-@import "shared/scss/colors.scss"
+@import "shared/scss/colors.scss";
 
+.shop-name {
+    letter-spacing: 2.69px;
+    font-size: 24px;
+    pointer-events: none;
+}
+.top-row {
+    display: grid;
+}
+
+
+.bottom-row {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 0 128px;
+}
+.bottom-row-item {
+    text-transform: uppercase;
+    text-align: center;
+    height: 64px;
+    line-height: 64px;
+    letter-spacing: 1.19px;
+}
+.active {
+    box-shadow: inset 0 -4px 0 $pink;
+}
+
+.main-toolbar {
+    position: fixed;
+    top: 0px;
+}
