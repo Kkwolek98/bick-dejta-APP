@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatDividerModule,
     MatInputModule,
+    MatRippleModule,
   ],
   exports: [
     MatToolbarModule,
     MatCardModule,
     MatDividerModule,
     MatInputModule,
+    MatRippleModule,
   ]
 })
 export class MaterialModule { }
