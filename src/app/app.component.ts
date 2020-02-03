@@ -12,7 +12,6 @@ export class AppComponent {
   ) { }
 
   changePage(route): void {
-    console.log(route)
     // this.router.navigate([route])
   }
 
