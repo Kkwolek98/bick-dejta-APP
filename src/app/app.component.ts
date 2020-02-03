@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Bick Dejta - internetowy sklep z dużą ilością dejta';
+  constructor(
+    private router: Router,
+  ) { }
+
+  changePage(route): void {
+    console.log(route)
+    // this.router.navigate([route])
+  }
+
+  setActivePage(page): void {
+
+  }
 }
