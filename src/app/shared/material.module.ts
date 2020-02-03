@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatDividerModule,
     MatInputModule,
     MatRippleModule,
+    MatIconModule,
   ],
   exports: [
     MatToolbarModule,
@@ -23,6 +26,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatDividerModule,
     MatInputModule,
     MatRippleModule,
+    MatIconModule,
   ]
 })
 export class MaterialModule { }
