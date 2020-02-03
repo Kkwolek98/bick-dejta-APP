@@ -1,4 +1,6 @@
 @import "shared/scss/colors.scss";
+@import "shared/scss/mat-icons.scss";
+
 
 $bottom-row-height: 48px;
 
@@ -9,6 +11,17 @@ $bottom-row-height: 48px;
 }
 .top-row {
     display: grid;
+    grid-auto-flow: column;
+}
+.cart {
+    * {
+        float: right;
+        margin-right: 32px;
+        cursor: pointer;
+    }
+}
+.spacer {
+    grid-column: span 6;
 }
 
 
