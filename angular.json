@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "bick-dejta-app"
+  "defaultProject": "bick-dejta-app",
+  "cli": {
+    "analytics": false
+  }
 }
