@@ -1,9 +1,11 @@
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent }
+  { path: '', component: MainPageComponent },
+  { path: 'admin-panel', component: AdminPanelComponent }
 ];
 
 @NgModule({

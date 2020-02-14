@@ -11,7 +11,8 @@ import { ProductComponent } from './components/elements/product/product.componen
 import { CartViewComponent } from './components/cart-view/cart-view.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './components/about/about.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     CartViewComponent,
     SummaryComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
