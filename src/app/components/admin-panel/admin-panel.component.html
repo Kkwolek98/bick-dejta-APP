@@ -1,1 +1,51 @@
-<p>admin-panel works!</p>
+<div class="container">
+    <mat-card class="main-card">
+        <mat-card-header>
+            <mat-card-title>Panel Administratora</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-divider inset=true></mat-divider>
+            <p class="header">Dodaj produkt</p>
+            <div class="form">
+                <div class="form-label">
+                    <div>Nazwa:</div>
+                </div>
+                <mat-form-field>
+                    <mat-label>Wpisz nazwę gry</mat-label>
+                    <input matInput />
+                </mat-form-field>
+
+                <div class="form-label">
+                    <div>Opis:</div>
+                </div>
+                <mat-form-field>
+                    <mat-label>Krótki opis gry</mat-label>
+                    <textarea style="height: 200px; resize: none;" matInput></textarea>
+                </mat-form-field>
+
+                <div class="form-label">
+                    <div>Okładka:</div>
+                </div>
+                <mat-form-field>
+                    <mat-label>Link do okładki</mat-label>
+                    <input matInput />
+                </mat-form-field>
+
+                <div class="form-label">
+                    <div>Cena:</div>
+                </div>
+                <mat-form-field style="width: 50%">
+                    <mat-label>Cena gry w złotówkach</mat-label>
+                    <input matInput />
+                </mat-form-field>
+
+                <div></div>
+                <div>
+                    <button mat-fab style="float: right;">
+                        <mat-icon style="color: white;">add</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

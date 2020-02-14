@@ -6,6 +6,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -19,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatRippleModule,
     MatIconModule,
+    MatButtonModule,
   ],
   exports: [
     MatToolbarModule,
@@ -27,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatRippleModule,
     MatIconModule,
+    MatButtonModule,
   ]
 })
 export class MaterialModule { }
