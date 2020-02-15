@@ -13,6 +13,8 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,9 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

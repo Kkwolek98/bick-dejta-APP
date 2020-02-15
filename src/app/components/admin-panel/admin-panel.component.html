@@ -6,13 +6,13 @@
         <mat-card-content>
             <mat-divider inset=true></mat-divider>
             <p class="header">Dodaj produkt</p>
-            <div class="form">
+            <div class="form" [formGroup]="form">
                 <div class="form-label">
                     <div>Nazwa:</div>
                 </div>
                 <mat-form-field>
                     <mat-label>Wpisz nazwę gry</mat-label>
-                    <input matInput />
+                    <input formControlName="name" matInput />
                 </mat-form-field>
 
                 <div class="form-label">
@@ -20,7 +20,7 @@
                 </div>
                 <mat-form-field>
                     <mat-label>Krótki opis gry</mat-label>
-                    <textarea style="height: 200px; resize: none;" matInput></textarea>
+                    <textarea formControlName="description" style="height: 200px; resize: none;" matInput></textarea>
                 </mat-form-field>
 
                 <div class="form-label">
@@ -28,7 +28,7 @@
                 </div>
                 <mat-form-field>
                     <mat-label>Link do okładki</mat-label>
-                    <input matInput />
+                    <input formControlName="imgUrl" matInput />
                 </mat-form-field>
 
                 <div class="form-label">
@@ -36,12 +36,12 @@
                 </div>
                 <mat-form-field style="width: 50%">
                     <mat-label>Cena gry w złotówkach</mat-label>
-                    <input matInput />
+                    <input type="number" formControlName="price" matInput />
                 </mat-form-field>
 
                 <div></div>
                 <div>
-                    <button mat-fab style="float: right;">
+                    <button (click)="addProduct()" mat-fab style="float: right;">
                         <mat-icon style="color: white;">add</mat-icon>
                     </button>
                 </div>
