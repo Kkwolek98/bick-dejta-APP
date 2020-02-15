@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SummaryComponent,
     ContactComponent,
     AboutComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
