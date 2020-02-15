@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainPageComponent },
   { path: 'admin-panel', component: AdminPanelComponent },
   { path: 'game/:id', component: ProductDetailsComponent },
