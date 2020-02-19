@@ -1,7 +1,13 @@
+import { Platform } from './Platform';
+
 export class Product {
-    name: string;
-    description: string;
-    price: number;
-    imgUrl: string;
-    id?: number;
+    constructor(
+        public name: string,
+        public description: string,
+        public imgUrl: string,
+        public platforms: Platform[],
+        public categories: Category[],
+        public id?: number,
+    ) { }
+
 }
