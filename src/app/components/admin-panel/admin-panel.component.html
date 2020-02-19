@@ -32,16 +32,32 @@
                 </mat-form-field>
 
                 <div class="form-label">
+                    <div>Platforma:</div>
+                </div>
+                <mat-form-field style="width: 80%">
+                    <mat-label>Wybierz platformę dla gry</mat-label>
+                    <input formControlName="platform" matInput />
+                </mat-form-field>
+
+                <div class="form-label">
                     <div>Cena:</div>
                 </div>
-                <mat-form-field style="width: 50%">
-                    <mat-label>Cena gry w złotówkach</mat-label>
+                <mat-form-field style="width: 70%">
+                    <mat-label>Cena gry dla platformy</mat-label>
                     <input type="number" formControlName="price" matInput />
+                </mat-form-field>
+
+                <div class="form-label">
+                    <div>Kategoria:</div>
+                </div>
+                <mat-form-field>
+                    <mat-label>Wybierz kategorię</mat-label>
+                    <input formControlName="category" matInput />
                 </mat-form-field>
 
                 <div></div>
                 <div>
-                    <button (click)="addProduct()" mat-fab style="float: right;">
+                    <button (click)="addProduct()" mat-fab style="margin-top: 24px; float: right;">
                         <mat-icon style="color: white;">add</mat-icon>
                     </button>
                 </div>

@@ -6,3 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-card-title {
     font-size: 24px !important;
 }
+
+input, textarea {
+    background: rgba(0,0,0,0.015) !important;
+}

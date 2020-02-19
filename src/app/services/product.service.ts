@@ -35,6 +35,6 @@ export class ProductService {
   }
 
   addPlatformToGame(id: number, platform: Platform) {
-    return this.http.post(urls.API + "/game/" + id + "/add-category", platform);
+    return this.http.post(urls.API + "/game/" + id + "/add-platform", platform);
   }
 }

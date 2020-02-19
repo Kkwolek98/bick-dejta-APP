@@ -3,7 +3,7 @@ export class Platform {
     constructor(
         public name: string,
         public price: number,
-        public product: Product,
+        public product?: Product,
         public id?: number,
     ) { }
 }
