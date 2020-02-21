@@ -37,25 +37,20 @@ export class AdminPanelComponent implements OnInit {
       description: this.form.get('description').value,
       imgUrl: this.form.get('imgUrl').value,
     }
+    const platform: Platform = {
+      price: this.form.get('price').value,
+      name: this.form.get('platform').value,
+    }
+    const category = this.form.get('category').value
 
-    this.adminUtils.addNewProduct(product).subscribe(
+    const productVm = {
+      product: product,
+      platforms: [platform],
+      categories: [new Category(category)]
+    }
+    this.adminUtils.addNewProduct(productVm).subscribe(
       data => {
-        console.log(data);
-        if (data) {
-          const platform: Platform = {
-            price: this.form.get('price').value,
-            name: this.form.get('platform').value,
-          }
-          this.productService.addPlatformToGame(data.id, platform).subscribe(
-            data => {
-              console.log(data);
-            })
-          const category = this.form.get('category').value
-          this.productService.addCategoryToGame(data.id, category).subscribe(
-            data => {
-              console.log(data)
-            })
-        }
+        console.log(data)
       })
   }
 

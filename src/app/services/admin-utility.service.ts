@@ -13,7 +13,7 @@ export class AdminUtilityService {
     private http: HttpClient,
   ) { }
 
-  public addNewProduct(product: Product): Observable<Product> {
+  public addNewProduct(product): Observable<Product> {
     return this.http.post<Product>(urls.API + '/game/add', product);
   }
 }
