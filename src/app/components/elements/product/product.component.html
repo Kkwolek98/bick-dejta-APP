@@ -1,0 +1,24 @@
+<mat-card class="mat-elevation-z2 main-card">
+    <div class="product--main-content">
+        <div class="name">
+            {{_game.name}}
+        </div>
+        <div class="other-platforms">
+            Również na: <span *ngFor="let platform of _game.platforms; let last = last"
+                routerLink="/games/{{platform.name}}" style="cursor: pointer;">
+                {{platform.name}}<span *ngIf="!last">, </span></span>
+        </div>
+        <div class="image">
+            <img src="{{_game.imgUrl}}" />
+        </div>
+    </div>
+    <div class="product--additional-info">
+        <div class="price">
+            {{_price}} zł
+        </div>
+        <div class="spacer"></div>
+        <div class="add">
+            <mat-icon matRipple>add_shopping_cart</mat-icon>
+        </div>
+    </div>
+</mat-card>

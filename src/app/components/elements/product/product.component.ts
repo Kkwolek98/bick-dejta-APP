@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Product } from './../../../models/Product';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  @Input('game') set game(val) {
+    this._game = val;
+  }
+
+  @Input('platform') set platform(val) {
+    this._platform = val;
+  }
+
+  public _game: Product;
+  public _platform: string;
+  public _price: number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this._price = this.getPriceForPlatform();
   }
 
+  getPriceForPlatform(): number {
+    console.log(this._game.platforms)
+    return this._game.platforms.find(platform => {
+      return platform.name.toUpperCase() == this._platform.toUpperCase();
+    }).price;
+  }
 }

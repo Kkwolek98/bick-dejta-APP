@@ -52,4 +52,5 @@ $bottom-row-height: 48px;
 .main-toolbar {
     position: fixed;
     top: 0px;
+    z-index: 20;
 }

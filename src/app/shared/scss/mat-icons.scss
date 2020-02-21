@@ -1,5 +1,7 @@
 @for $i from 12 through 64 {
     .icon-#{$i} {
         font-size: #{$i}px;
+        width: #{$i}px;
+        height: #{$i}px;
     }
 }

@@ -1,0 +1,39 @@
+.main-card {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 60%;
+}
+.product--main-content {
+
+    .name {
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .other-platforms {
+        font-size: 11px;
+        color: rgba(0,0,0,0.4);
+        margin-bottom: 8px;
+    }
+    .image {
+        img {
+            width:150px;
+        }
+    }
+}
+.product--additional-info {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    .price {
+        text-align: right;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.6)
+    }
+    .add {
+        text-align: right;
+        cursor: pointer;
+    }
+}

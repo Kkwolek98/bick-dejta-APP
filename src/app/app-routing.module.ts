@@ -1,3 +1,4 @@
+import { ProductListComponent } from './components/elements/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'main', component: MainPageComponent },
   { path: 'admin-panel', component: AdminPanelComponent },
   { path: 'game/:id', component: ProductDetailsComponent },
+  { path: 'games/:platform', component: ProductListComponent },
 ];
 
 @NgModule({
