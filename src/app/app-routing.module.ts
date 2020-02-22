@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'admin-panel', component: AdminPanelComponent },
   { path: 'game/:id', component: ProductDetailsComponent },
   { path: 'games/:platform', component: ProductListComponent },
+  { path: 'games/consoles/:platform', component: ProductListComponent },
 ];
 
 @NgModule({

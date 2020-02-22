@@ -1,9 +1,24 @@
 <div class="container">
     <mat-card class="main-card">
         <mat-card-header>
-            <mat-card-title>Gry {{platform}}</mat-card-title>
+            <mat-card-title>Gry {{platform != "CONSOLES" ? platform : "na konsole"}}</mat-card-title>
+            <mat-card-subtitle>Znaleziono {{games.length}}</mat-card-subtitle>
         </mat-card-header>
+        <div class="button-toggle" *ngIf="platform != 'PC'">
+            <mat-button-toggle-group #group="matButtonToggleGroup">
+                <mat-button-toggle (click)="changePlatform(group.value)" value="PS4">
+                    Playstation 4
+                </mat-button-toggle>
+                <mat-button-toggle (click)="changePlatform(group.value)" value="XONE">
+                    Xbox One
+                </mat-button-toggle>
+                <mat-button-toggle (click)="changePlatform(group.value)" value="SWITCH">
+                    Nintendo Switch
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
         <mat-card-content>
+            <mat-divider *ngIf="games.length" [inset]=true style="margin-bottom: 22px;"></mat-divider>
             <app-product *ngFor="let game of games" [game]="game" [platform]="platform"></app-product>
         </mat-card-content>
     </mat-card>

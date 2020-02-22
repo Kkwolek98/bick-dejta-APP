@@ -8,3 +8,19 @@
         width: 90%;
     }
 }
+.button-toggle {
+    mat-button-toggle-group {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 24px;
+    }
+    .mat-button-toggle-checked[value = "PS4"] {
+        background-color: rgba(1, 77, 199, 0.3) !important;
+    }
+    .mat-button-toggle-checked[value = "XONE"] {
+        background-color: rgba(17, 125, 16, 0.3) !important
+    }
+    .mat-button-toggle-checked[value = "SWITCH"] {
+        background-color: rgba(232, 1, 21, 0.3) !important;
+    }
+}

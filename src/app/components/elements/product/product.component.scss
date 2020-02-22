@@ -9,7 +9,7 @@
 
     .name {
         font-weight: 400;
-        font-size: 20px;
+        font-size: 24px;
         letter-spacing: 1px;
     }
     .other-platforms {
@@ -25,12 +25,17 @@
 }
 .product--additional-info {
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: .5fr 3fr 1fr;
     .price {
         text-align: right;
         font-weight: 500;
         font-size: 18px;
         color: rgba(0, 0, 0, 0.6)
+    }
+    .items {
+        color: rgba(0,0,0,0.4);
+        font-size: 11px;
+        text-align: right;
     }
     .add {
         text-align: right;

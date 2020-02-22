@@ -4,7 +4,7 @@
             {{_game.name}}
         </div>
         <div class="other-platforms">
-            Również na: <span *ngFor="let platform of _game.platforms; let last = last"
+            Dostępne na: <span *ngFor="let platform of _game.platforms; let last = last"
                 routerLink="/games/{{platform.name}}" style="cursor: pointer;">
                 {{platform.name}}<span *ngIf="!last">, </span></span>
         </div>
@@ -14,9 +14,14 @@
     </div>
     <div class="product--additional-info">
         <div class="price">
-            {{_price}} zł
+            {{_selectedPlatform.price}} zł
         </div>
-        <div class="spacer"></div>
+        <div class="spacer">
+            <div class="items"
+                [style.color]="_selectedPlatform.items < 10 || !_selectedPlatform.items ? 'rgba(255, 0, 0, 0.4)' : ''">
+                Dostępnych sztuk: {{_selectedPlatform.items ? _selectedPlatform.items : 0}}
+            </div>
+        </div>
         <div class="add">
             <mat-icon matRipple>add_shopping_cart</mat-icon>
         </div>

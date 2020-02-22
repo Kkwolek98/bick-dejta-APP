@@ -1,3 +1,4 @@
+import { Platform } from './../../../models/Platform';
 import { Product } from './../../../models/Product';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -17,19 +18,20 @@ export class ProductComponent implements OnInit {
   }
 
   public _game: Product;
+  public _selectedPlatform: Platform;
   public _platform: string;
   public _price: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this._price = this.getPriceForPlatform();
+    this._selectedPlatform = this.getSelectedPlatform();
   }
 
-  getPriceForPlatform(): number {
+  getSelectedPlatform(): Platform {
     console.log(this._game.platforms)
     return this._game.platforms.find(platform => {
       return platform.name.toUpperCase() == this._platform.toUpperCase();
-    }).price;
+    });
   }
 }

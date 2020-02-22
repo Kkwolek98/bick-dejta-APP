@@ -4,6 +4,7 @@ export class Platform {
         public name: string,
         public price: number,
         public product?: Product,
+        public items?: number,
         public id?: number,
     ) { }
 }
