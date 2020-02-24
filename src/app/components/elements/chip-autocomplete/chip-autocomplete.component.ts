@@ -66,8 +66,7 @@ export class ChipAutocompleteComponent implements OnInit {
       input.value = '';
     }
     console.log(this._selectedItems)
-    this.values.emit(this._selectedItems.map(x => x.id));
-
+    this.values.emit(this._selectedItems);
   }
 
 }

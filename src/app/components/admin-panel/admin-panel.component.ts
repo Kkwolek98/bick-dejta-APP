@@ -15,6 +15,7 @@ export class AdminPanelComponent implements OnInit {
 
   public form: FormGroup;
   public categories;
+  public catIds;
   constructor(
     private fb: FormBuilder,
     private adminUtils: AdminUtilityService,
@@ -43,7 +44,7 @@ export class AdminPanelComponent implements OnInit {
   }
 
   getValues(val) {
-    console.log(val)
+    this.catIds = val;
   }
 
   addProduct(): void {
@@ -56,12 +57,15 @@ export class AdminPanelComponent implements OnInit {
       price: this.form.get('price').value,
       name: this.form.get('platform').value,
     }
-    const category = this.form.get('category').value
+    let cats: Category[] = [];
+    this.catIds.forEach(element => {
+      cats.push({ category: element.name });
+    });
 
     const productVm = {
       product: product,
       platforms: [platform],
-      categories: [new Category(category)]
+      categories: cats,
     }
     this.adminUtils.addNewProduct(productVm).subscribe(
       data => {
