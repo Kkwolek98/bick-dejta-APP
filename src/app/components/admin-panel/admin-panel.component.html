@@ -48,13 +48,11 @@
                 </mat-form-field>
 
                 <div class="form-label">
-                    <div>Kategoria:</div>
+                    <div>Kategorie:</div>
                 </div>
-                <mat-form-field>
-                    <mat-label>Wybierz kategorię</mat-label>
-                    <!-- <input formControlName="category" matInput /> -->
-                    <!-- <app-chip-autocomplete></app-chip-autocomplete> -->
-                </mat-form-field>
+                <!-- <input formControlName="category" matInput /> -->
+                <app-chip-autocomplete style="width: 100%;" (values)="getValues($event)" [items]="categories"
+                    [placeholder]="'Wybierz kategorie'"></app-chip-autocomplete>
 
                 <div></div>
                 <div>

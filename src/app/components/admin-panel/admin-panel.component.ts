@@ -1,3 +1,4 @@
+import { CategoryService } from './../../services/category.service';
 import { Platform } from './../../models/Platform';
 import { Category } from './../../models/Category';
 import { ProductService } from './../../services/product.service';
@@ -13,10 +14,12 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class AdminPanelComponent implements OnInit {
 
   public form: FormGroup;
+  public categories;
   constructor(
     private fb: FormBuilder,
     private adminUtils: AdminUtilityService,
     private productService: ProductService,
+    private categoryService: CategoryService,
   ) {
     this.form = this.fb.group({
       name: new FormControl(''),
@@ -29,6 +32,18 @@ export class AdminPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getAllCategories().subscribe(data => {
+      this.categories = data;
+      (this.categories as any[]).forEach(element => {
+        element['name'] = element['category'];
+        delete element['category'];
+      });
+      console.log(this.categories)
+    })
+  }
+
+  getValues(val) {
+    console.log(val)
   }
 
   addProduct(): void {
