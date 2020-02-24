@@ -1,3 +1,4 @@
+import { ChipAutocompleteComponent } from './components/elements/chip-autocomplete/chip-autocomplete.component';
 import { MaterialModule } from './shared/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,8 +17,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { ChipAutocompleteComponent } from './components/elements/chip-autocomplete/chip-autocomplete.component';
-import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +41,6 @@ import { MatListModule } from '@angular/material/list';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatListModule,
     ChipAutocompleteComponent
   ],
   providers: [],

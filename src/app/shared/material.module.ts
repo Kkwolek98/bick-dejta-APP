@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -26,7 +26,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatIconModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatChipsModule
+    MatChipsModule,
+    MatListModule
   ],
   exports: [
     MatToolbarModule,
@@ -37,7 +38,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatIconModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatChipsModule
+    MatChipsModule,
+    MatListModule
   ]
 })
 export class MaterialModule { }
