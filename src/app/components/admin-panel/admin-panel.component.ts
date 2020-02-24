@@ -5,6 +5,7 @@ import { ProductService } from './../../services/product.service';
 import { AdminUtilityService } from './../../services/admin-utility.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
@@ -21,6 +22,7 @@ export class AdminPanelComponent implements OnInit {
     private adminUtils: AdminUtilityService,
     private productService: ProductService,
     private categoryService: CategoryService,
+    private router: Router,
   ) {
     this.form = this.fb.group({
       name: new FormControl(''),
@@ -70,6 +72,7 @@ export class AdminPanelComponent implements OnInit {
     this.adminUtils.addNewProduct(productVm).subscribe(
       data => {
         console.log(data)
+        this.router.navigate(['/game/' + data.id])
       })
   }
 
