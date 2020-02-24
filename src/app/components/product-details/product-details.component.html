@@ -4,17 +4,17 @@
             <div class="mat-card-title name">
                 {{game.name}}
             </div>
-            <img class="mat-card-image img" src="{{game.imgUrl}}"/>
+            <img class="mat-card-image img" src="{{game.imgUrl}}" />
         </div>
         <div class="two">
             <div class="mat-card-content content">
                 Dostępne na
                 <mat-list>
                     <mat-list-item *ngFor="let platform of game.platforms">
-                        <span class="c-0">{{platform.name}}:</span> 
-                        <span class="c-1"> {{platform.price}} PLN </span> 
+                        <span class="c-0">{{platform.name}}:</span>
+                        <span class="c-1"> {{platform.price}} PLN </span>
                         <button mat-raised-button class="btn" color="primary">DODAJ DO KOSZYKA</button>
-                    </mat-list-item> 
+                    </mat-list-item>
                 </mat-list>
             </div>
             <div class="mat-card-content decs">
@@ -22,5 +22,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>

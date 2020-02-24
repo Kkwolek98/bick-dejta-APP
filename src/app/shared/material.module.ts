@@ -26,7 +26,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatIconModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatChipsModule,
+    MatChipsModule
   ],
   exports: [
     MatToolbarModule,

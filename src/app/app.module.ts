@@ -41,7 +41,8 @@ import { MatListModule } from '@angular/material/list';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    ChipAutocompleteComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
