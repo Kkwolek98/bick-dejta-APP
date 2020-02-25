@@ -1,3 +1,5 @@
+import { urls } from './urls';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +7,9 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
   private key_localStorage: string = 'games';
-  constructor() {
+  constructor(
+    private http: HttpClient,
+  ) {
 
   }
 
@@ -17,7 +21,7 @@ export class CartService {
       if (prod) {
         products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platform_id': platform_id, 'amount': 1 });
+        products.push({ 'platformId': platform_id, 'amount': 1 });
       }
       localStorage.setItem(this.key_localStorage, JSON.stringify(products));
     } else {
@@ -28,12 +32,19 @@ export class CartService {
       if (prod) {
         products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platform_id': platform_id, 'amount': 1 });
+        products.push({ 'platformId': platform_id, 'amount': 1 });
       }
 
       localStorage.setItem(this.key_localStorage, JSON.stringify(products));
 
     }
+  }
+
+  getPriceTotal() {
+    let products = localStorage.getItem(this.key_localStorage);
+    this.http.post(urls.API + "/price-total", {
+      items: products
+    })
   }
 
   getProducts(): any[] {
