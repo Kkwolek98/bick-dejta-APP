@@ -4,6 +4,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { CartViewComponent } from './components/cart-view/cart-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'game/:id', component: ProductDetailsComponent },
   { path: 'games/:platform', component: ProductListComponent },
   { path: 'games/consoles/:platform', component: ProductListComponent },
+  { path: 'cart', component: CartViewComponent }
 ];
 
 @NgModule({

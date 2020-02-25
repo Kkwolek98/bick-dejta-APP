@@ -1,1 +1,10 @@
-<p>cart-view works!</p>
+<div *ngFor="let product of products">
+    {{product.game.name}}
+    <img src="{{product.game.imgUrl}}" alt="">
+    <span>
+        {{product.platform.price}}
+    </span>
+    <span>
+        {{product.platform.name}}
+    </span>
+</div>
