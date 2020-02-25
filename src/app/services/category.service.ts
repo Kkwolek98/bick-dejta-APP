@@ -16,4 +16,8 @@ export class CategoryService {
   getCategoriesWithGmaesById(id: number): Observable<Category> {
     return this.http.get<Category>(urls.API + "/category/" + id);
   }
+
+  getAllCategories() {
+    return this.http.get(urls.API + '/categories');
+  }
 }

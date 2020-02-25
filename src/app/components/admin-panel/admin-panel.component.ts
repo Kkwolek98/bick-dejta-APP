@@ -1,9 +1,11 @@
+import { CategoryService } from './../../services/category.service';
 import { Platform } from './../../models/Platform';
 import { Category } from './../../models/Category';
 import { ProductService } from './../../services/product.service';
 import { AdminUtilityService } from './../../services/admin-utility.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
@@ -13,10 +15,14 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class AdminPanelComponent implements OnInit {
 
   public form: FormGroup;
+  public categories;
+  public catIds;
   constructor(
     private fb: FormBuilder,
     private adminUtils: AdminUtilityService,
     private productService: ProductService,
+    private categoryService: CategoryService,
+    private router: Router,
   ) {
     this.form = this.fb.group({
       name: new FormControl(''),
@@ -29,6 +35,18 @@ export class AdminPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getAllCategories().subscribe(data => {
+      this.categories = data;
+      (this.categories as any[]).forEach(element => {
+        element['name'] = element['category'];
+        delete element['category'];
+      });
+      console.log(this.categories)
+    })
+  }
+
+  getValues(val) {
+    this.catIds = val;
   }
 
   addProduct(): void {
@@ -41,16 +59,20 @@ export class AdminPanelComponent implements OnInit {
       price: this.form.get('price').value,
       name: this.form.get('platform').value,
     }
-    const category = this.form.get('category').value
+    let cats: Category[] = [];
+    this.catIds.forEach(element => {
+      cats.push({ category: element.name });
+    });
 
     const productVm = {
       product: product,
       platforms: [platform],
-      categories: [new Category(category)]
+      categories: cats,
     }
     this.adminUtils.addNewProduct(productVm).subscribe(
       data => {
         console.log(data)
+        this.router.navigate(['/game/' + data.id])
       })
   }
 
