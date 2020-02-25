@@ -15,9 +15,9 @@ export class CartService {
       let prod = products.find(x => x.platform_id === platform_id);
       let prodIndex = products.findIndex(x => x.platform_id === platform_id);
       if (prod) {
-        products[prodIndex]['ammount']++;
+        products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platform_id': platform_id, 'ammount': 1 });
+        products.push({ 'platform_id': platform_id, 'amount': 1 });
       }
       localStorage.setItem(this.key_localStorage, JSON.stringify(products));
     } else {
@@ -26,9 +26,9 @@ export class CartService {
       let prod = products.find(x => x.platform_id === platform_id);
       let prodIndex = products.findIndex(x => x.platform_id === platform_id);
       if (prod) {
-        products[prodIndex]['ammount']++;
+        products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platform_id': platform_id, 'ammount': 1 });
+        products.push({ 'platform_id': platform_id, 'amount': 1 });
       }
 
       localStorage.setItem(this.key_localStorage, JSON.stringify(products));
