@@ -42,9 +42,9 @@ export class CartViewComponent implements OnInit {
     this.sum = 0;
     if (this.products) {
       this.products.forEach(product =>{
-        this.productService.getGameById(product.product_id).subscribe(game => { 
+        this.productService.getGameById(product.productId).subscribe(game => { 
           product.game  = game;
-          product.platform = game.platforms.filter(platform => platform.id === product.platform_id)[0]
+          product.platform = game.platforms.filter(platform => platform.id === product.platformId)[0]
           this.sum += product.platform.price;
         });
       })
@@ -53,5 +53,6 @@ export class CartViewComponent implements OnInit {
 
   onSubmit(customerData){
     this.checkoutForm.reset();
+    this.cartService.getPriceTotal();
   }
 }

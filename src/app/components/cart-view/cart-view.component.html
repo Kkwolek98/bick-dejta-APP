@@ -1,22 +1,22 @@
 <div>
     <div *ngFor="let product of products" class="head">
         <div class="one">
-            <div class="name">{{product.game.name}}</div>
-            <img src="{{product.game.imgUrl}}" class="img">
+            <div class="name">{{product.game?.name}}</div>
+            <img src="{{product.game?.imgUrl}}" class="img">
         </div>
         <div class="two">
             <span>
-                {{product.platform.price}} PLN
+                {{product.platform?.price}} PLN
             </span>
             <p>
-                Gra na konsolę {{product.platform.name}}
+                Gra na konsolę {{product.platform?.name}}
             </p>
             <p>ILOŚĆ: {{product.amount}}</p>
                 
         </div>
         <div class="three">
             <span>
-                <button mat-raised-button class="btn" color="primary" (click)="removeFromCart(product.platform_id)">USUŃ Z
+                <button mat-raised-button class="btn" color="primary" (click)="removeFromCart(product.platformId)">USUŃ Z
                     KOSZYKA</button>
             </span>
         </div>
@@ -25,7 +25,7 @@
     <div class="wrap">
         
         <div class="price">
-            Drogi Kliencie! Za zakupy w naszym sklepie płacisz: <span class="sum">{{sum}} PLN</span>
+            Drogi Kliencie! Za zakupy w naszym sklepie płacisz: <span class="sum">{{sum | currency : 'PLN' }}</span>
             <p>Aby zapłacić podaj email</p>
         </div>
         <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="form">
