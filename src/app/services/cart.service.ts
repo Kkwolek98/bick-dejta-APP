@@ -1,3 +1,5 @@
+import { urls } from './urls';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +7,9 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
   private key_localStorage: string = 'games';
-  constructor() {
+  constructor(
+    private http: HttpClient,
+  ) {
 
   }
 
@@ -16,18 +20,18 @@ export class CartService {
       let prod = products.find(x => x.platform_id === platform_id);
       let prodIndex = products.findIndex(x => x.platform_id === platform_id);
       if (prod) {
-        products[prodIndex]['ammount']++;
+        products[prodIndex]['amount']++;
       } else {
-        products.push({'product_id': product_id, 'platform_id': platform_id, 'ammount': 1 });
+        products.push({'product_id': product_id, 'platform_id': platform_id, 'amount': 1 });
       }
     } else {
       products = JSON.parse(localStorage.getItem(this.key_localStorage));
       let prod = products.find(x => x.platform_id === platform_id);
       let prodIndex = products.findIndex(x => x.platform_id === platform_id);
       if (prod) {
-        products[prodIndex]['ammount']++;
+        products[prodIndex]['amount']++;
       } else {
-        products.push({ 'product_id': product_id, 'platform_id': platform_id, 'ammount': 1 });
+        products.push({ 'product_id': product_id, 'platform_id': platform_id, 'amount': 1 });
       }
     }
 
@@ -50,6 +54,12 @@ export class CartService {
     localStorage.setItem(this.key_localStorage, JSON.stringify(products));
   }
 
+  getPriceTotal() {
+    let products = localStorage.getItem(this.key_localStorage);
+    this.http.post(urls.API + "/price-total", {
+      items: products
+    })
+  }
 
   getProducts(): any[] {
     return JSON.parse(localStorage.getItem(this.key_localStorage));
