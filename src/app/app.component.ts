@@ -11,8 +11,8 @@ export class AppComponent {
     private router: Router,
   ) { }
 
-  changePage(route): void {
-    // this.router.navigate([route])
+  navigateToAdmin() {
+    this.router.navigate(['/admin-panel']);
   }
 
   setActivePage(page): void {
