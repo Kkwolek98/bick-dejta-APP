@@ -19,7 +19,7 @@ export class CartViewComponent implements OnInit {
     private cartService: CartService,
     private productService: ProductService,
     private formBuilder: FormBuilder
-  ) { 
+  ) {
     this.setProducts();
     this.checkoutForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]]
@@ -31,28 +31,28 @@ export class CartViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeFromCart(platform_id){
+  removeFromCart(platform_id) {
     this.cartService.removeFromCart(platform_id);
     this.setProducts();
   }
 
-  setProducts(){
+  setProducts() {
     this.products = this.cartService.getProducts();
     this.gamesList = [];
     this.sum = 0;
     if (this.products) {
-      this.products.forEach(product =>{
-        this.productService.getGameById(product.productId).subscribe(game => { 
-          product.game  = game;
+      this.products.forEach(product => {
+        this.productService.getGameById(product.productId).subscribe(game => {
+          product.game = game;
           product.platform = game.platforms.filter(platform => platform.id === product.platformId)[0]
           this.sum += product.platform.price;
         });
       })
-    }  
+    }
   }
 
-  onSubmit(customerData){
+  onSubmit(customerData) {
     this.checkoutForm.reset();
-    this.cartService.getPriceTotal();
+    this.cartService.getPriceTotal().subscribe(data => (window as any).location = data);
   }
 }

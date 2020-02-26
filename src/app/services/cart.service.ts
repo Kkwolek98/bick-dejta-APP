@@ -22,7 +22,7 @@ export class CartService {
       if (prod) {
         products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platformId': platform_id, 'amount': 1 });
+        products.push({ 'productId': product_id, 'platformId': platform_id, 'amount': 1 });
       }
     } else {
       products = JSON.parse(localStorage.getItem(this.key_localStorage));
@@ -31,7 +31,7 @@ export class CartService {
       if (prod) {
         products[prodIndex]['amount']++;
       } else {
-        products.push({ 'platformId': platform_id, 'amount': 1 });
+        products.push({ 'productId': product_id, 'platformId': platform_id, 'amount': 1 });
       }
     }
 
@@ -57,12 +57,12 @@ export class CartService {
   getPriceTotal() {
     let products = JSON.parse(localStorage.getItem(this.key_localStorage));
     products.forEach(e => {
-      delete e.productId
+      delete e['productId'];
     });
 
-    this.http.post(urls.API + "/price-total", {
-      items: JSON.stringify(products)
-    })
+    return this.http.post(urls.API + "/pay", {
+      items: products
+    }, { responseType: 'text' })
   }
 
   getProducts(): any[] {
